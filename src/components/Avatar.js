@@ -1,9 +1,18 @@
 import React from 'react';
 import Styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
+import { fadeInAnimation } from './Animations';
+import { useScroll } from './useScroll';
 
 const Me = () => {
+  const [element, controls] = useScroll();
   return (
-    <Avatar>
+    <Avatar
+      ref={element}
+      initial='hidden'
+      variant={fadeInAnimation}
+      transition={{ delay: 0.5, duration: 0.1 }}
+      animate={controls}>
       <Hair></Hair>
       <LeftEar></LeftEar>
       <RightEar></RightEar>
@@ -45,7 +54,7 @@ const Blink = keyframes`
     }
 `;
 
-export const Avatar = Styled.div`
+export const Avatar = Styled(motion.div)`
   display: grid;
   width: 50px;
   height: 100px;

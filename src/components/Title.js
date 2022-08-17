@@ -16,6 +16,11 @@ const Title = styled.h1`
   font-weight: 100;
   font-family: ${(props) => props.theme.fonts.title};
   transform: rotate(90deg);
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    transform: rotate(360deg);
+    font-size: 1.5rem;
+  }
 `;
 
 export default Title;

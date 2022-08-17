@@ -1,17 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as AiIcons from 'react-icons/ai';
+import { useScroll } from './useScroll';
+import { footerLogoAnimations, footerTextAnimations } from './Animations';
+import { motion } from 'framer-motion';
 
 function Footer() {
+  const [element, controls] = useScroll();
   return (
     <Section>
-      <div className='logo_div'>
+      <motion.div
+        className='logo_div'
+        ref={element}
+        initial='hidden'
+        animate={controls}
+        variants={footerLogoAnimations}
+        transition={{
+          delay: 0.02,
+          type: 'tween',
+          duration: 0.5,
+        }}>
         <div className='logo_initials'>
           <p>jc</p>
         </div>
         <h1>j.cernero</h1>
-      </div>
-      <Socials>
+      </motion.div>
+      <Socials
+        ref={controls}
+        initial='hidden'
+        animate={controls}
+        variants={footerTextAnimations}
+        transition={{
+          delay: 0.02,
+          type: 'tween',
+          duration: 0.8,
+        }}>
         <a href='https://www.linkedin.com/in/joncernero8463'>
           <AiIcons.AiOutlineLinkedin />
         </a>
@@ -66,9 +89,13 @@ const Section = styled.footer`
     font-size: 15px;
     font-weight: bolder;
   }
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    padding: 2rem 1rem;
+  }
 `;
 
-export const Socials = styled.div`
+export const Socials = styled(motion.div)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,5 +115,11 @@ export const Socials = styled.div`
 
   a:hover {
     color: ${(props) => props.theme.colors.accent1};
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    a {
+      font-size: 15px;
+    }
   }
 `;

@@ -21,4 +21,5 @@ export const Icons = [
   <SiIcons.SiNodemon />,
   <SiIcons.SiGithub />,
   <SiIcons.SiStyledcomponents />,
+  <SiIcons.SiNextdotjs />,
 ];

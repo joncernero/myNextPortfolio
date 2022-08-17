@@ -5,21 +5,42 @@ import Avatar from '../components/Avatar';
 import Header from './Header';
 import TechEd from './TechEd';
 import Badge from '../../public/assets/eleven-fifty-academy-graduate.png';
+import Footer from './Footer';
+import { motion } from 'framer-motion';
+import {
+  fadeInAnimation,
+  homeAnimation,
+  homeInfoAnimation,
+} from './Animations';
+import { useScroll } from './useScroll';
 
 function Home() {
+  const [element, controls] = useScroll();
   return (
     <Section id='Home' image={BgPicOne}>
       <Header />
       <Container>
         <Avatar />
-        <h3>Welcome to</h3>
-        <h1>My Portfolio</h1>{' '}
-        <h6>
+        <motion.div
+          ref={element}
+          initial='hidden'
+          variants={homeAnimation}
+          transition={{ delay: 0.3, duration: 0.6, type: 'tween' }}
+          animate={controls}>
+          <h3>Welcome to</h3>
+          <h1>My Portfolio</h1>{' '}
+        </motion.div>
+        <motion.h6
+          ref={element}
+          initial='hidden'
+          variants={homeInfoAnimation}
+          transition={{ delay: 0.3, duration: 0.6, type: 'tween' }}
+          animate={controls}>
           Hey, I&rsquo;m Jonathan and thanks for checking out my portfolio.
           I&rsquo;m an Indiana based Junior Web Developer. I have a diverse, and
           growing, skill set and I&rsquo;m always looking for new projects and
           opportunities!
-        </h6>
+        </motion.h6>
         <div className='bottom_div'>
           <a href='mailto:cernero.jon@gmail.com'>
             <button>Contact Me</button>
@@ -47,8 +68,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 65vh;
-  padding-left: 5rem;
+  min-height: 65vh;
+  padding-left: 6rem;
   line-height: 0.9;
   font-family: ${(props) => props.theme.fonts.title};
 
@@ -66,7 +87,7 @@ const Container = styled.div`
     word-wrap: inherit;
     font-weight: normal;
     font-size: 20px;
-    width: 30vw;
+    width: 50vw;
   }
 
   button {
@@ -94,6 +115,11 @@ const Container = styled.div`
       transform: scale(1.08);
       border-radius: 5px;
     }
+
+    @media screen and (min-width: 280px) and (max-width: 760px) {
+      width: 100px;
+      font-size: 10px;
+    }
   }
 
   .bottom_div {
@@ -101,6 +127,31 @@ const Container = styled.div`
     width: 30vw;
     justify-content: start;
     gap: 1rem;
+
+    @media screen and (min-width: 280px) and (max-width: 760px) {
+      padding-top: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    padding-left: 2rem;
+    h1 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h6 {
+      font-size: 10px;
+      width: 40vw;
+      margin-top: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1050px) {
+    h6 {
+      width: 30vw;
+    }
   }
 `;
 
@@ -117,5 +168,10 @@ const MyBadge = styled.div`
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    height: 75px;
+    width: 50px;
   }
 `;

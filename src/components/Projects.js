@@ -92,6 +92,14 @@ const Container = styled.div`
     width: 100%;
     padding: 5px;
   }
+
+  @media screen and (min-width: 280px) and (max-width: 760px) {
+    flex-direction: column;
+    min-height: 50vh;
+    .content_div {
+      flex-direction: column;
+    }
+  }
 `;
 
 const Card = styled.div`
@@ -107,7 +115,7 @@ const Card = styled.div`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 10 px black;
     transform: scale(1.03);
     border-radius: 5px;
   }

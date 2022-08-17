@@ -11,7 +11,7 @@ export const ProjectData = [
   {
     title: 'AccountHub',
     stack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'StyledComponents'],
-    link: 'https://jac-my-accounthubappclient.herokuapp.com/',
+    link: 'https://jac-accounthubclient.herokuapp.com/',
     description:
       'AccountHub is a customer relationship manager. You can keep track of all pertinent account information such as key contacts, budget information, and track monthly campaigns spend.',
     username: 'user@email.com',

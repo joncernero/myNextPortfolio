@@ -10,6 +10,7 @@ function SocialLinks() {
     window.addEventListener('scroll', () => {
       window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
     });
+    console.log(visible);
   });
 
   return (
@@ -24,7 +25,7 @@ function SocialLinks() {
         <AiIcons.AiOutlineMail />
       </a>
       <HomeLink>
-        <a href='#' className={`${visible ? 'block' : 'none '}`}>
+        <a href='#' className={`${visible ? 'block' : 'none'}`}>
           <FaChevronUp />
         </a>
       </HomeLink>
@@ -40,7 +41,6 @@ export const Socials = styled.div`
   align-items: center;
   max-width: 100vw;
   height: auto;
-  gap: 1rem;
   z-index: 10;
 
   a {
@@ -48,12 +48,18 @@ export const Socials = styled.div`
     color: ${(props) => props.theme.colors.fontColor1};
     transition: 0.4s ease-in-out;
     z-index: 1;
-    /* margin-bottom: 2rem; */
+    gap: 3rem;
   }
 
   a:hover {
     color: ${(props) => props.theme.colors.accent1};
     transform: scale(1.2);
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 724px) {
+    a {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -64,10 +70,11 @@ const HomeLink = styled.div`
     opacity: 0;
     visibility: hidden;
   }
+
   a {
     position: fixed;
     bottom: 40px;
-    left: 40px;
+    left: 20px;
     background-color: ${(props) => props.theme.colors.fontColor1};
     padding: 1rem;
     border-radius: 100%;
