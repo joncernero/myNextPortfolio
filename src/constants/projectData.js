@@ -20,7 +20,7 @@ export const ProjectData = [
   {
     title: 'WeatherApp',
     stack: ['React', 'StyledComponents'],
-    link: 'https://vercel.com/joncernero/vanilla-js-weather-app/7ZyDMpodgejdc3q9Tex1CBp79Zsg',
+    link: 'https://vanilla-js-weather-app-theta.vercel.app/',
     description:
       'Derived from the Open Weather API, this weather app is a crude attempt at cloning the popular IOS Weather App. The user can see the current seven day forecast as well as a daily hour-by-hour.',
     username: '',
