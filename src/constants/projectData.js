@@ -2,7 +2,7 @@ export const ProjectData = [
   {
     title: 'diligence',
     stack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'StyledComponents'],
-    link: 'https://jac-my-diligenceclient.herokuapp.com/',
+    link: 'https://diligencedemo.vercel.app',
     description:
       'This app is designed to collect and organize multi-family property information. The information can utilized to priority your renovation scope and stay up-to-date with maintenance needs.',
     username: 'user@email.com',
