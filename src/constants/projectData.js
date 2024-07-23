@@ -11,10 +11,10 @@ export const ProjectData = [
   {
     title: 'AccountHub',
     stack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'StyledComponents'],
-    link: 'https://jac-accounthubclient.herokuapp.com/',
+    link: 'https://accounthub.vercel.app/',
     description:
       'AccountHub is a customer relationship manager. You can keep track of all pertinent account information such as key contacts, budget information, and track monthly campaigns spend.',
-    username: 'user@email.com',
+    username: 'lukelives@password',
     password: 'password',
   },
   {
